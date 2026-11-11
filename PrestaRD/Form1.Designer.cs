@@ -225,6 +225,7 @@
             btnRegistrar.TabIndex = 18;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnCartera
             // 
@@ -234,6 +235,7 @@
             btnCartera.TabIndex = 19;
             btnCartera.Text = "Cartera";
             btnCartera.UseVisualStyleBackColor = true;
+            btnCartera.Click += btnCartera_Click;
             // 
             // lblResultado
             // 

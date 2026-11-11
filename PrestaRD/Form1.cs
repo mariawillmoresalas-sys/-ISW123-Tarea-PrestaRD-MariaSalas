@@ -34,7 +34,7 @@ namespace PrestaRD
 
         }
 
-      
+
 
 
         private void lblResultado_Click(object sender, EventArgs e)
@@ -139,6 +139,36 @@ namespace PrestaRD
 
             lstSalida.Items.Add($"Pagando RD$ {pago:N2} al mes, termina en {meses} meses");
             lstSalida.Items.Add($"En el último pago le sobran RD$ {-saldo:N2}");
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
+            if (ultimo == null) { MessageBox.Show("Primero evalúa un préstamo."); return; }
+            prestamos.Add(ultimo);
+            ultimo = null;                       // para no registrarlo dos veces
+            lstPrestamos.Items.Clear();
+            foreach (Prestamo p in prestamos) lstPrestamos.Items.Add(p);
+        }
+
+        private void btnCartera_Click(object sender, EventArgs e)
+        {
+            var porTipo = new Dictionary<string, decimal>();
+
+            foreach (Prestamo p in prestamos)
+            {
+                if (!p.Aprobado) continue;
+
+                if (porTipo.ContainsKey(p.Tipo))
+                    porTipo[p.Tipo] += p.Monto;
+                else
+                    porTipo[p.Tipo] = p.Monto;
+            }
+
+            lstSalida.Items.Clear();
+            lstSalida.Items.Add("Cartera aprobada por tipo:");
+            foreach (var par in porTipo)
+                lstSalida.Items.Add($"   {par.Key,-12} RD$ {par.Value,14:N2}");
         }
     }
 }
