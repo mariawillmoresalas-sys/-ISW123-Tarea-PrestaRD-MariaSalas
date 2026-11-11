@@ -195,6 +195,7 @@
             btnEvaluar.TabIndex = 15;
             btnEvaluar.Text = "Evaluar";
             btnEvaluar.UseVisualStyleBackColor = true;
+            btnEvaluar.Click += btnEvaluar_Click;
             // 
             // btnTabla
             // 
@@ -204,6 +205,7 @@
             btnTabla.TabIndex = 16;
             btnTabla.Text = "Tabla";
             btnTabla.UseVisualStyleBackColor = true;
+            btnTabla.Click += btnTabla_Click;
             // 
             // btnSimularPago
             // 
@@ -213,6 +215,7 @@
             btnSimularPago.TabIndex = 17;
             btnSimularPago.Text = "Simular pago";
             btnSimularPago.UseVisualStyleBackColor = true;
+            btnSimularPago.Click += btnSimularPago_Click;
             // 
             // btnRegistrar
             // 
@@ -236,7 +239,7 @@
             // 
             lblResultado.AutoSize = true;
             lblResultado.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResultado.Location = new Point(266, 57);
+            lblResultado.Location = new Point(216, 57);
             lblResultado.Name = "lblResultado";
             lblResultado.Size = new Size(100, 25);
             lblResultado.TabIndex = 21;
@@ -245,7 +248,7 @@
             // lblResumen
             // 
             lblResumen.AutoSize = true;
-            lblResumen.Location = new Point(266, 190);
+            lblResumen.Location = new Point(242, 189);
             lblResumen.Name = "lblResumen";
             lblResumen.Size = new Size(56, 15);
             lblResumen.TabIndex = 22;
@@ -254,24 +257,24 @@
             // lstSalida
             // 
             lstSalida.FormattingEnabled = true;
-            lstSalida.Location = new Point(417, 57);
+            lstSalida.Location = new Point(374, 57);
             lstSalida.Name = "lstSalida";
-            lstSalida.Size = new Size(128, 214);
+            lstSalida.Size = new Size(327, 244);
             lstSalida.TabIndex = 23;
             // 
             // lstPrestamos
             // 
             lstPrestamos.FormattingEnabled = true;
-            lstPrestamos.Location = new Point(571, 57);
+            lstPrestamos.Location = new Point(732, 57);
             lstPrestamos.Name = "lstPrestamos";
-            lstPrestamos.Size = new Size(130, 214);
+            lstPrestamos.Size = new Size(309, 244);
             lstPrestamos.TabIndex = 24;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1078, 450);
             Controls.Add(lstPrestamos);
             Controls.Add(lstSalida);
             Controls.Add(lblResumen);
