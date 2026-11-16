@@ -82,7 +82,7 @@ namespace PrestaRD
             bool edadOk = edadFinal <= 75;
             bool aprobado = capacidadOk && edadOk && !tieneAtrasos;
 
-            lstSalida.Items.Add($"Cuota / ingreso: {cuota / ingreso:P1} {(capacidadOk ? "✔" : "✘ pasa del 35 %")}");
+           
             lstSalida.Items.Add($"Edad al terminar: {edadFinal} {(edadOk ? "✔" : "✘ pasa de 75")}");
             lstSalida.Items.Add($"Historial: {(tieneAtrasos ? "✘ tiene atrasos" : "✔ sin atrasos")}");
 
@@ -98,6 +98,13 @@ namespace PrestaRD
                 Cuota = cuota,
                 Aprobado = aprobado
             };
+
+
+           
+
+            decimal relacion = ingreso > 0 ? (cuota / ingreso) : 0;
+            lstSalida.Items.Add($"Cuota / ingreso: {relacion:P1} {(capacidadOk ? "✔" : "✘ pasa de 35%")}");
+
 
 
         }
